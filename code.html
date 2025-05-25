@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skin Cancer Prediction</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffe5e5, #E6E6FA);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.8);
+      border: 2px solid rgba(255, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #b80000, #ff4d4d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 25px;
+      color: #444;
+    }
+
+    input[type="file"] {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      border: 2px dashed #cc0000;
+      background-color: #fff0f0;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    input[type="file"]:hover {
+      background-color: #ffe5e5;
+      border-color: #e60000;
+    }
+
+    button {
+      padding: 12px 35px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(90deg, #cc0000, #ff3333);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(204, 0, 0, 0.4);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #ff3333, #cc0000);
+      transform: translateY(-2px);
+    }
+
+    button:active {
+      background-color: #990000;
+      transform: translateY(1px);
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    .footer a {
+      color: #cc0000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        font-size: 15px;
+      }
+
+      input[type="file"] {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Predictive Analysis for Skin Cancer</h1>
+  <p>Upload a skin lesion image to analyze whether it's benign or malignant.</p>
+
+  <form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" accept="image/*" required>
+    <button type="submit">Upload & Predict</button>
+  </form>
+
+  
+</div>
+
+</body>
+</html>
